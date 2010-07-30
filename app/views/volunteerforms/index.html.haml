@@ -1,0 +1,14 @@
+- form_for :volunteerform, @volunteerform, :url => { :action => :create } do |f|
+  %p
+    Case ID:
+    = @current_user.caseid
+  %p
+    Current Group Position:
+    = f.text_field :position
+  %p
+    Desired Tags:
+    - @tags = Tag.find(:all, :order => :name)
+    = select :volunteerform, :tags, @tags.collect { |tag| [tag.name, tag.id] },{},{ :multiple => true }
+  %p
+    = f.submit 'Apply'
+

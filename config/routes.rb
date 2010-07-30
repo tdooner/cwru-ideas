@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tags
 
   map.resources :integration
+  
+  map.resources :volunteerforms
 
   map.admin 'admin', :controller => 'admin'
  
